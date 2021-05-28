@@ -9,12 +9,13 @@ public class SampleTest {
 
     @Test
     public void testOnePlusOne(){
-        assertEquals(2, 1+1);
 
         assertThrows(RuntimeException.class, () -> {
            throw new RuntimeException("toto");
         });
         assertEquals(new Sample().fact(3), 6);
+        assertEquals(new Sample().op(Sample.Operation.ADD, 1, 1), 2);
+        assertEquals(new Sample().op(Sample.Operation.MULT, 1, 1), 1);
     }
 
 
